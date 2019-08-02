@@ -47,7 +47,8 @@ with Display():
     driver = webdriver.Firefox()
     driver.get('https://sullygnome.com/channels/watched')
     time.sleep(15)
-    for i in range(10):
+    print("start")
+    for i in range(1):
         results = driver.find_elements_by_xpath('//*[@id="tblControl"]/tbody/tr')
         if len(results) == 0:
             time.sleep(15)
@@ -83,7 +84,7 @@ with Display():
         button = driver.find_elements_by_xpath('//*[@id="tblControl_next"]')[0]
         button.click() # go to next page
         time.sleep(5)
-        #print("On Page " + str(i))
+        print("On Page " + str(i))
 
     driver.quit()
 
@@ -120,4 +121,3 @@ cnx.close()
 #         response.write("On Page " + str(i))
 #     response.write('\n'+url)
 
-    
