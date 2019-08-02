@@ -74,6 +74,8 @@ with Display():
                     ds
                 )
 
+                print(data_row)
+
                 cursor.execute(add_row, data_row)
                 #print('\t'.join([cell.text.encode('utf-8') for cell in result.find_elements_by_tag_name('td')]) + '\n')
             except Exception as e:
