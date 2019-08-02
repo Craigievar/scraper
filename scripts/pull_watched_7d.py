@@ -23,7 +23,7 @@ with Display():
     driver.get('https://sullygnome.com/channels/watched')
     time.sleep(15)
     print("start")
-    for i in range(1):
+    for i in range(5000):
         results = driver.find_elements_by_xpath('//*[@id="tblControl"]/tbody/tr')
         if len(results) == 0:
             time.sleep(15)
