@@ -16,7 +16,8 @@ with Display():
         for result in results:
             #textResults.append([cell.text for cell in result.find_elements_by_tag_name('td')])
             try:
-                output.write('\t'.join([cell.text for cell in result.find_elements_by_tag_name('td')]) + '\n')
+                #output.write('\t'.join([cell.text for cell in result.find_elements_by_tag_name('td')]) + '\n')
+                print('\t'.join([cell.text for cell in result.find_elements_by_tag_name('td')]) + '\n')
             except Exception as e:
                 print(e)
         button = driver.find_elements_by_xpath('//*[@id="tblControl_next"]')[0]
