@@ -1,11 +1,14 @@
-
-# A very simple Flask Hello World app for you to get started with...
-
 from flask import Flask
+from flask import request
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello from Flask!'
+    return ':)'
 
+@app.route('/request', methods=['GET'])
+def send_data():
+    searchword = request.args.get('key', '')
+    return searchword
