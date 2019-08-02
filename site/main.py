@@ -2,7 +2,6 @@ from flask import Flask
 from flask import request
 from datetime import date
 import mysql.connector
-return searchword
 
 app = Flask(__name__)
 
@@ -39,7 +38,5 @@ def send_data():
         'mature', 
         'language')]
 
-
-    
     return header+out
 
