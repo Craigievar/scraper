@@ -13,6 +13,10 @@ with Display():
     time.sleep(15)
     for i in range(10):
         results = driver.find_elements_by_xpath('//*[@id="tblControl"]/tbody/tr')
+        if len(results) == 0:
+            time.sleep(15)
+            results = driver.find_elements_by_xpath('//*[@id="tblControl"]/tbody/tr')
+
         for result in results:
             #textResults.append([cell.text for cell in result.find_elements_by_tag_name('td')])
             try:
