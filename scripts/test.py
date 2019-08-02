@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from pyvirtualdisplay import Display
 from selenium import webdriver
+import time 
 
 output = open('top_twitch_sully_7dollowup.tsv', 'w+')
 
