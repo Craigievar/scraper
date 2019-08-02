@@ -9,6 +9,7 @@ output = open('top_twitch_sully_7dollowup.tsv', 'w+')
 with Display():
     driver = webdriver.Firefox()
     driver.get('https://sullygnome.com/channels/watched')
+    time.sleep(15)
     for i in range(10):
         results = driver.find_elements_by_xpath('//*[@id="tblControl"]/tbody/tr')
         for result in results:
