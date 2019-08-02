@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask
 from flask import request
 from datetime import date
@@ -38,5 +39,4 @@ def send_data():
         'mature', 
         'language')]
 
-    return header+out
-
+    return str(header+out)
