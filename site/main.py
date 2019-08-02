@@ -41,4 +41,4 @@ def send_data():
         'ds')]
 
     
-    return '\n'.join(['\t'.join([str(x) for x in row]) for row in out])
+    return '\n'.join(['\t'.join([str(x) for x in row]) for row in (header+out)])
