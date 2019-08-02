@@ -37,6 +37,8 @@ def send_data():
         'new_followers', 
         'partnered', 
         'mature', 
-        'language')]
+        'language',
+        'ds')]
 
-    return str(header+out)
+    
+    return '\n'.join(['\t'.join([str(x) for x in row]) for row in out])
