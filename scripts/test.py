@@ -17,8 +17,8 @@ with Display():
             #textResults.append([cell.text for cell in result.find_elements_by_tag_name('td')])
             try:
                 output.write('\t'.join([cell.text for cell in result.find_elements_by_tag_name('td')]) + '\n')
-            except:
-                print("Uhhh error")
+            except Exception as e: print(e)
+                print(e)
         button = driver.find_elements_by_xpath('//*[@id="tblControl_next"]')[0]
         button.click() # go to next page
         time.sleep(5)
