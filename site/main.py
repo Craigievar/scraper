@@ -26,7 +26,7 @@ def send_data():
 
     cursor = cnx.cursor()
 
-    cursor.execute("select * from followers_7d where ds = %s" % (ds))
+    cursor.execute("select * from followers_7d where ds = '%s'" % (ds))
 
     out = cursor.fetchall()
 
