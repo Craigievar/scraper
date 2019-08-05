@@ -15,6 +15,10 @@ def send_data():
     ds = request.args.get('ds', '')
     if ds == '':
         ds = date.today()
+    else:
+        a = [int(x) for x in ds.split('-')]
+        ds = datetime.date(a[0], a[1], a[2])
+
 
     cnx = mysql.connector.connect(user='csfb', password='beepboop',
                           host='csfb.mysql.pythonanywhere-services.com',
@@ -22,23 +26,22 @@ def send_data():
 
     cursor = cnx.cursor()
 
-    cursor.execute("select * from followers_7d")
+    cursor.execute("select * from followers_7d where ds = %s" % (ds))
 
     out = cursor.fetchall()
 
-    header = [(
-        'row', 
-        'name', 
-        'watch_hours', 
-        'broadcast_hours', 
-        'peak_viewers', 
-        'avg_viewers', 
-        'followers', 
-        'new_followers', 
-        'partnered', 
-        'mature', 
-        'language',
-        'ds')]
-
+    # header = [(
+    #     'row', 
+    #     'name', 
+    #     'watch_hours', 
+    #     'broadcast_hours', 
+    #     'peak_viewers', 
+    #     'avg_viewers', 
+    #     'followers', 
+    #     'new_followers', 
+    #     'partnered', 
+    #     'mature', 
+    #     'language',
+    #     'ds')]
     
-    return u'\n'.join([','.join([str(x) for x in row]) for row in (header+out)])
+    return u'\n'.join([','.join([str(x) for x in row]) for row in (out)])
