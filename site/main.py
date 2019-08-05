@@ -17,7 +17,7 @@ def send_data():
         ds = date.today()
     else:
         a = [int(x) for x in ds.split('-')]
-        ds = datetime.date(a[0], a[1], a[2])
+        ds = date(a[0], a[1], a[2])
 
 
     cnx = mysql.connector.connect(user='csfb', password='beepboop',
